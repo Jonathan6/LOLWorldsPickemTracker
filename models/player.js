@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const db = require('../config/db'); // Assuming your db connection is set up here
+const db = require('../config/db.js');
 
 const Player = db.define('Player', {
     player_id: {
@@ -20,7 +20,7 @@ const Player = db.define('Player', {
             key: 'team_id'
         }
     },
-    region: {
+    role: {
         type: DataTypes.STRING(3), // Abbreviated region code (e.g., NA, EU)
         allowNull: false
     }
