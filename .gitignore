@@ -1,3 +1,14 @@
-/node_modules
-package-lock.json
+# Node modules
+node_modules/
+
+# Environment variables
 config/
+.env
+
+# Logs
+logs
+*.log
+
+# IDE
+.vscode/
+
