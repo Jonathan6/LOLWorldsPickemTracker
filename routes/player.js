@@ -10,4 +10,33 @@ router.get('/:id', (req, res) => {
     res.send(`Details for player with ID: ${playerId}`);
 });
 
+
+/*
+CRUD
+
+Create
+    create new player entry. We need:
+        name
+        team
+        role
+
+Read
+    read data by ID
+
+    read data by name
+
+Update
+    update by ID. We need
+        team, role, name
+
+    update by name. We need
+        team, role
+
+Delete
+
+    delete by ID
+
+    delete by name
+*/
+
 module.exports = router;
