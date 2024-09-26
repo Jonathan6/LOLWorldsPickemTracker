@@ -1,13 +1,42 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('List of all players will be here');
+// Get all players
+router.get('/', async (req, res) => {
+    try {
+      const players = await Player.findAll();
+      res.status(200).json(players);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+// Get a player by ID
+router.get('/:id', async (req, res) => {
+    try {
+        const player = await player.findByPk(req.params.id);
+        if (player) {
+          res.status(200).json(player);
+        } else {
+          res.status(404).json({ message: "Player not found" });
+        }
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
 });
 
-router.get('/:id', (req, res) => {
-    const playerId = req.params.id;
-    res.send(`Details for player with ID: ${playerId}`);
+
+  
+
+// Create a new player
+router.post('/', async (req, res) => {
+    try {
+      const { name, team_id, role} = req.body;
+      const newPlayer = await Player.create({ name, team_id, role});
+      res.status(201).json(newPlayer);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
 });
 
 

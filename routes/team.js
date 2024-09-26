@@ -31,10 +31,39 @@ Delete
 */
 
 // Create a new team
-router.post('/', );
+router.post('/', async (req, res) => {
+    try {
+      const { name, region} = req.body;
+      const newTeam = await Team.create({ name, region});
+      res.status(201).json(newTeam);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+});
 
 // Read a team by ID
-router.get('/:id', );
+router.get('/:id', async (req, res) => {
+    try {
+        const team = await team.findByPk(req.params.id);
+        if (team) {
+          res.status(200).json(team);
+        } else {
+          res.status(404).json({ message: "Team not found" });
+        }
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+});
+
+// Read all teams
+router.get('/', async (req, res) => {
+    try {
+      const teams = await Team.findAll();
+      res.status(200).json(teams);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
 
 // Read a team by name
 router.get('/name/:name', );
