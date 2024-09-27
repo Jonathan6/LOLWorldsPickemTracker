@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/db.js');
 
-const Teams = db.define('Teams', {
+const Team = db.define('Team', {
     team_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -20,4 +20,4 @@ const Teams = db.define('Teams', {
     timestamps: false
 });
 
-module.exports = Teams;
+module.exports = Team;

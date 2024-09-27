@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/db.js');
 
-const Champions = db.define('Champions', {
+const Champion = db.define('Champion', {
     champion_id: {
         type: DataTypes.SMALLINT,
         primaryKey: true,
@@ -22,4 +22,4 @@ const Champions = db.define('Champions', {
     timestamps: false
 });
 
-module.exports = Champions;
+module.exports = Champion;

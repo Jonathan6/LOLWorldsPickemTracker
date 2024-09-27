@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/db.js');
 
-const Games = sequelize.define('Games', {
+const Game = sequelize.define('Game', {
     game_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -28,7 +28,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Teams',
+            model: 'Team',
             key: 'team_id'
         }
     },
@@ -36,7 +36,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Teams',
+            model: 'Team',
             key: 'team_id'
         }
     },
@@ -44,7 +44,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Teams',
+            model: 'Team',
             key: 'team_id'
         }
     },
@@ -52,7 +52,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -60,7 +60,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -68,7 +68,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -76,7 +76,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -84,7 +84,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -92,7 +92,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -100,7 +100,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -108,7 +108,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -116,7 +116,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -124,7 +124,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -132,7 +132,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -140,7 +140,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -148,7 +148,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -156,7 +156,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -164,7 +164,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -172,7 +172,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -180,7 +180,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -188,7 +188,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -196,7 +196,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     },
@@ -204,7 +204,7 @@ const Games = sequelize.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Champions',
+            model: 'Champion',
             key: 'champion_id'
         }
     }
@@ -212,4 +212,4 @@ const Games = sequelize.define('Games', {
     timestamps: false
 });
 
-module.exports = Games;
+module.exports = Game;
