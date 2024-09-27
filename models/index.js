@@ -1,8 +1,10 @@
-const sequelize = require('../config/database');
-const Games = require('games');
-const Teams = require('teams');
-const Players = require('players');
-const Champions = require('champions');
+const sequelize = require('../config/db');
+const { DataTypes } = require('sequelize');
+
+const Players = require('../models/players')(sequelize, DataTypes);
+const Teams = require('../models/teams')(sequelize, DataTypes);
+const Games = require('../models/games')(sequelize, DataTypes);
+const Champions = require('../models/champions')(sequelize, DataTypes);
 
 // Define associations
 Games.belongsTo(Teams, { foreignKey: 'team_1_id', as: 'Team1' });
@@ -18,7 +20,6 @@ Champions.belongsTo(Games, { foreignKey: 'game_id' });
 
 // Export models
 module.exports = {
-    sequelize,
     Games,
     Teams,
     Players,
