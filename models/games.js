@@ -1,9 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/db.js');
-const Champion = require('champion.js');
-const Team = require('team.js');
 
-const Game = sequelize.define('Game', {
+const Games = sequelize.define('Games', {
     game_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -30,7 +28,7 @@ const Game = sequelize.define('Game', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Teams', // refers to table name
+            model: 'Teams',
             key: 'team_id'
         }
     },
@@ -51,7 +49,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_1_top_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -59,7 +57,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_1_jungle_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -67,7 +65,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_1_mid_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -75,7 +73,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_1_adc_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -83,7 +81,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_1_support_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -91,7 +89,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_2_top_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -99,7 +97,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_2_jungle_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -107,7 +105,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_2_mid_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -115,7 +113,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_2_adc_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -123,7 +121,7 @@ const Game = sequelize.define('Game', {
         }
     },
     team_2_support_champion: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -131,7 +129,7 @@ const Game = sequelize.define('Game', {
         }
     },
     first_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -139,7 +137,7 @@ const Game = sequelize.define('Game', {
         }
     },
     second_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -147,7 +145,7 @@ const Game = sequelize.define('Game', {
         }
     },
     third_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -155,7 +153,7 @@ const Game = sequelize.define('Game', {
         }
     },
     fourth_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -163,7 +161,7 @@ const Game = sequelize.define('Game', {
         }
     },
     fifth_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -171,7 +169,7 @@ const Game = sequelize.define('Game', {
         }
     },
     sixth_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -179,7 +177,7 @@ const Game = sequelize.define('Game', {
         }
     },
     seventh_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -187,7 +185,7 @@ const Game = sequelize.define('Game', {
         }
     },
     eighth_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -195,7 +193,7 @@ const Game = sequelize.define('Game', {
         }
     },
     ninth_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -203,7 +201,7 @@ const Game = sequelize.define('Game', {
         }
     },
     tenth_ban: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Champions',
@@ -214,4 +212,4 @@ const Game = sequelize.define('Game', {
     timestamps: false
 });
 
-module.exports = Game;
+module.exports = Games;

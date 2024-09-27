@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../config/db.js');
 
-const Player = db.define('Player', {
+const Players = db.define('Players', {
     player_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -21,11 +21,11 @@ const Player = db.define('Player', {
         }
     },
     role: {
-        type: DataTypes.STRING(3), // Abbreviated region code (e.g., NA, EU)
+        type: DataTypes.STRING(10), // Abbreviated region code (e.g., NA, EU)
         allowNull: false
     }
 }, {
-    timestamps: false
+    timestamps: false,
 });
 
-module.exports = Player;
+module.exports = Players;
