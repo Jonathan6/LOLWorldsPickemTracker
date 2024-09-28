@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const db = require('../config/db.js');
+const db = require('../config/db');
 
 const Player = db.define('Player', {
     player_id: {
@@ -16,12 +16,12 @@ const Player = db.define('Player', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Team', // Name of the team table
+            model: 'Team',
             key: 'team_id'
         }
     },
     role: {
-        type: DataTypes.STRING(10), // Abbreviated region code (e.g., NA, EU)
+        type: DataTypes.STRING(10),
         allowNull: false
     }
 }, {

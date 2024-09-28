@@ -1,10 +1,9 @@
 const express = require('express');
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv').config();
 const routes = require('./routes');
 const db = require('./config/db');
-const config = require('./config/config.json');
-
+const { sequelize, Team } = require('./models');
+// GAME, PLAYER, CHAMPION
 const app = express();
 const port = process.env.PORT;
 
@@ -23,10 +22,10 @@ db.sync({ force: false })
   })
   .catch(err => console.error('Error during DB sync:', err));
 
-// app.use((err, req, res, next) => {
-//     console.error(err.stack);
-//     res.status(500).send('Something went wrong!');
-// });
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
