@@ -1,7 +1,7 @@
 const sequelize = require('../config/db');
 
-// const Player = require('./player');
 const Team = require('./team');
+const Player = require('./player');
 // const Game = require('./game');
 // const Champion = require('./champion');
 
@@ -11,8 +11,8 @@ const Team = require('./team');
 // Team.hasMany(Game, { foreignKey: 'team_1_id' });
 // Team.hasMany(Game, { foreignKey: 'team_2_id' });
 
-// Player.belongsTo(Team, { foreignKey: 'team_id' });
-// Team.hasMany(Player, { foreignKey: 'team_id' });
+Team.hasMany(Player, { foreignKey: 'team_id' });
+Player.belongsTo(Team, { foreignKey: 'team_id' });
 
 // Game.hasMany(Champion, { foreignKey: 'game_id' });
 // Champion.belongsTo(Game, { foreignKey: 'game_id' });
@@ -20,7 +20,8 @@ const Team = require('./team');
 // Export models
 module.exports = {
     sequelize,
-    Team
+    Team,
+    Player
 };
 
 // Game,

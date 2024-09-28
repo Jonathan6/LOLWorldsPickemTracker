@@ -209,6 +209,9 @@ const Game = db.define('Game', {
         }
     }
 }, {
+    modelName: 'game',
+    freezeTableName: true,
+    tableName: 'game',
     timestamps: false
 });
 

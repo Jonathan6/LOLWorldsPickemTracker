@@ -11,14 +11,11 @@ const Champion = db.define('Champion', {
     champion_name: {
         type: DataTypes.STRING(50),
         allowNull: false
-    },
-    roles_played: {
-        type: DataTypes.TINYINT,
-        defaultValue: 0,
-        allowNull: false,
-        comment: '5-bit value representing roles played: top, jungle, mid, adc, support'
     }
 }, {
+    modelName: 'champion',
+    freezeTableName: true,
+    tableName: 'champion',
     timestamps: false
 });
 

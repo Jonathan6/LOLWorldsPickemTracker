@@ -17,6 +17,9 @@ const Team = db.define('Team', {
         allowNull: false
     }
 }, {
+    modelName: 'team',
+    freezeTableName: true,
+    tableName: 'team',
     timestamps: false
 });
 

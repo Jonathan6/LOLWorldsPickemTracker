@@ -25,6 +25,9 @@ const Player = db.define('Player', {
         allowNull: false
     }
 }, {
+    modelName: 'player',
+    freezeTableName: true,
+    tableName: 'player',
     timestamps: false,
 });
 

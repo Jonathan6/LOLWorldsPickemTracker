@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Player = require('../models/player')
 
 // Get all players
 router.get('/', async (req, res) => {
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
 // Get a player by ID
 router.get('/:id', async (req, res) => {
     try {
-        const player = await player.findByPk(req.params.id);
+        const player = await Player.findByPk(req.params.id);
         if (player) {
           res.status(200).json(player);
         } else {
@@ -26,46 +27,16 @@ router.get('/:id', async (req, res) => {
 });
 
 
-  
-
 // Create a new player
 router.post('/', async (req, res) => {
     try {
-      const { name, team_id, role} = req.body;
-      const newPlayer = await Player.create({ name, team_id, role});
+      const { player_name, team_id, role} = req.body;
+      const newPlayer = await Player.create({ player_name, team_id, role});
       res.status(201).json(newPlayer);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
 });
 
-
-/*
-CRUD
-
-Create
-    create new player entry. We need:
-        name
-        team
-        role
-
-Read
-    read data by ID
-
-    read data by name
-
-Update
-    update by ID. We need
-        team, role, name
-
-    update by name. We need
-        team, role
-
-Delete
-
-    delete by ID
-
-    delete by name
-*/
 
 module.exports = router;
