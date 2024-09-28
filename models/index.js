@@ -2,8 +2,8 @@ const sequelize = require('../config/db');
 
 const Team = require('./team');
 const Player = require('./player');
+const Champion = require('./champion');
 // const Game = require('./game');
-// const Champion = require('./champion');
 
 // Define associations
 // Game.belongsTo(Team, { foreignKey: 'team_1_id', as: 'Team1' });
@@ -21,10 +21,10 @@ Player.belongsTo(Team, { foreignKey: 'team_id' });
 module.exports = {
     sequelize,
     Team,
-    Player
+    Player,
+    Champion
 };
 
 // Game,
 //     Team,
 //     Player,
-//     Champion,

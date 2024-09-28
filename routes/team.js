@@ -2,35 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Team = require('../models/team')
 
-/*
-CRUD
-
-Create
-    create new team. Needs
-        team name
-        region
-
-
-Read
-    read by name
-
-    read by ID
-
-    read by region
-
-Update
-    update by name:
-        need region
-    
-    update by ID:
-        need region, name
-
-Delete
-    delete by name
-
-    delete by ID
-*/
-
 // Create a new team
 router.post('/', async (req, res) => {
     try {
