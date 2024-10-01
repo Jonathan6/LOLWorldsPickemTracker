@@ -3,7 +3,7 @@ const db = require('../config/db.js');
 
 const Champion = db.define('Champion', {
     champion_id: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false

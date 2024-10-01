@@ -13,15 +13,15 @@ const Game = db.define('Game', {
         allowNull: false
     },
     drakes_killed: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     baron_steals: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     year: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     team_1_id: {
