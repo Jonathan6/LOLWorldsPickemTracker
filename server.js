@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 const routes = require('./routes');
 const db = require('./config/db');
-const { sequelize, Team, Player, Champion, Game } = require('./models');
+const { sequelize, Teams, Team_Stats, Players, Player_Stats, Champions, Games, Bans, Picks} = require('./models');
 const app = express();
 const port = process.env.PORT;
 
