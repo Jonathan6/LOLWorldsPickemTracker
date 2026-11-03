@@ -23,15 +23,15 @@ const Players = db.define('Players', {
     role: {
         type: DataTypes.STRING(10),
         allowNull: false
-    },
-    year: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    is_sub: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
     }
+    // year: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false
+    // },
+    // is_sub: {
+    //     type: DataTypes.BOOLEAN,
+    //     allowNull: false
+    // }
 }, {
     modelName: 'players',
     freezeTableName: true,

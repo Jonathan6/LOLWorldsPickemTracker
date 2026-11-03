@@ -8,8 +8,20 @@ const Champions = db.define('Champions', {
         autoIncrement: true,
         allowNull: false
     },
-    champions_name: {
+    name: {
         type: DataTypes.STRING(50),
+        allowNull: false
+    },
+    title: {
+        type: DataTypes.STRING(50),
+        allowNull: false
+    },
+    class: {
+        type: DataTypes.STRING(50),
+        allowNull: false
+    },
+    release_date: {
+        type: DataTypes.DATEONLY,
         allowNull: false
     }
 }, {

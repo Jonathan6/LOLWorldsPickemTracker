@@ -36,6 +36,10 @@ const Games = db.define('Games', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    date: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
     tournament: {
         type: DataTypes.STRING,
         allowNull: false
